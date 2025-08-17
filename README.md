@@ -44,9 +44,9 @@ SQLmap is an open-source penetration testing tool designed to automate the detec
 ### Installation
 On Kali Linux (recommended for penetration testing), install SQLmap with:
 
-bash
+```bash
 sudo apt install sqlmap
-
+```
 
 Alternatively, clone the repository from GitHub and run it with Python:
 
